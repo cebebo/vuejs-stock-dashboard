@@ -55,11 +55,6 @@
                 stacked: false,
               },
               y: {
-                title: {
-                  display: true,
-                  text: 'Revenue (in USD)',
-                  color: '#ffffff',
-                },
                 grid: {
                   color: '#555555',
                 },

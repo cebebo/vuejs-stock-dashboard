@@ -139,10 +139,10 @@ export default {
           prepareDatasetsForReGro(dataKey = 'revenue', period = -4) {
             // Farben für die 4 Quartale
             const quarterColors = [
-              '#093A52',
-              '#196F8C',
+              '#39DAFF',
               '#29A5C5',
-              '#39DAFF'
+              '#196F8C',
+              '#093A52'
             ];
            
             // Namen der letzten 4 Quartale
