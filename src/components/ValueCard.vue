@@ -44,7 +44,6 @@ export default {
             required: true,
         },
         grossMargin: {
-            type: Number,
             required: true,
         },
         logo: {
@@ -84,7 +83,7 @@ export default {
 .value-card {
     background-color: #011F35;
     border-radius: 16px;
-    width: 140px;
+    min-width: 150px;
     padding: 20px 24px;
     color: white;
     margin-right: 12px;

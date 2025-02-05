@@ -51,9 +51,14 @@ export default {
   gap: 16px;
   background-color: #023A6233;
   border-radius: 16px;
-  padding: 24px 32px;
+  padding: 24px 18px;
   overflow: hidden;
-  max-width: 1500px;
+  max-width: 1430px;
+  justify-content: center;
+  width: 100%;
+  height: 225px;
+  box-sizing: border-box;
+  margin-bottom: 42px;
 }
 
 .value-card-container {
