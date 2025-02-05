@@ -12,7 +12,7 @@ import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
 export default {
-    name: 'ChartCard',
+    name: 'RevenueThreeYearsCard',
     props: {
     labels: Array, // Die letzten 12 Quartale
     datasets: Array, // Array mit Daten für jede Firma

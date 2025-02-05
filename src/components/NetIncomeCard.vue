@@ -29,7 +29,7 @@ export default {
           indexAxis: 'y',
           responsive: true,
           maintainAspectRatio: true,
-          aspectRatio: 1,
+          aspectRatio: 1.2,
           plugins: {
             legend: {
               display: false,
@@ -84,12 +84,12 @@ export default {
 
 .chart-card {
   width: 375px;
-  height: 500px;
+  height: 400px;
   background-color: #011f35;
   border-radius: 16px;
   padding: 16px;
   box-sizing: border-box;
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
 
 p{
@@ -103,6 +103,16 @@ p{
   font-weight: 450;
   padding-right: 32px;
   text-align: end;
+}
+
+@media(max-width: 1450px) {
+
+.chart-card {
+  margin-left: 0;
+  width: 400px;
+  height: 420px;
+}
+
 }
 
 </style>

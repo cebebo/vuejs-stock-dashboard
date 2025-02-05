@@ -1,12 +1,17 @@
 <template>
-  <div v-if="loading">
-    Lade Daten...<br>
+  <div class="dflex center">
+    <div class="blueBox quarder"></div>
+    <div class="blueBox rounded"></div>
+    <h2>The Magnificent Seven Companies</h2>
+  </div>
+  <div v-if="loading" style="margin-top: 30vh;">
+    Loading datalist...<br>
     <img src="./assets/img/loading.gif">
   </div>
   <div v-if="error">{{ error }}</div>
-  <BaseCard :companies="stackData" v-if="!loading && !error" />
+  <BaseCard :companies="stackData" v-if="!loading && !error" style="margin-top: 20vh;"/>
   <div class="dflex">
-    <ChartCard
+    <RevenueThreeYearsCard
         :labels="getLastQuarters(-12)"
         :datasets="prepareDatasets('revenue', -12)"
          v-if="!loading && !error"
@@ -23,7 +28,7 @@
          v-if="!loading && !error"
     />
     <GrossMarginCard
-        :chartData="prepareDatasetsForReGro('grossMargin', -1)"
+        :chartData="prepareDatasetsForTTM('grossMargin', -1)"
          v-if="!loading && !error"
     />
     <RevenueGrowthCard
@@ -39,17 +44,17 @@
 import apiService from '@/services/apiService';
 import BaseCard from './components/BaseCard.vue';
 import '@/assets/fonts/fonts.css';
-import ChartCard from './components/ChartCard.vue';
 import RevenueBreakdownCard from './components/RevenueBreakdownCard.vue';
 import NetIncomeCard from './components/NetIncomeCard.vue';
 import GrossMarginCard from './components/GrossMarginCard.vue';
 import RevenueGrowthCard from './components/RevenueGrowthCard.vue';
+import RevenueThreeYearsCard from './components/RevenueThreeYearsCard.vue';
 
 
 
 export default {
     name: 'App',
-    components: { BaseCard, ChartCard, RevenueBreakdownCard, NetIncomeCard, GrossMarginCard, RevenueGrowthCard },
+    components: { BaseCard, RevenueBreakdownCard, NetIncomeCard, GrossMarginCard, RevenueGrowthCard, RevenueThreeYearsCard },
     data() {
         return {
             stackData: [],
@@ -67,6 +72,7 @@ export default {
             this.loading = false;
         }
     },
+    
 
     methods: {
         getLastQuarters(period = -12) {
@@ -133,12 +139,12 @@ export default {
           prepareDatasetsForReGro(dataKey = 'revenue', period = -4) {
             // Farben für die 4 Quartale
             const quarterColors = [
-              '#093A52', // Dunkelblau
-              '#11546F',
+              '#093A52',
               '#196F8C',
-              '#218AA8'  // Hellblau
+              '#29A5C5',
+              '#39DAFF'
             ];
-
+           
             // Namen der letzten 4 Quartale
             const quarterLabels = this.getLastQuarters(period);
 
@@ -175,7 +181,7 @@ body {
 }
 
 #app {
-    height: 200vh;
+    height: 160vh;
     background: radial-gradient(71.11% 100% at 50% 0%, #020204 14.6%, #011F35 100%);
     color: white;
     font-family: 'Rubik', sans-serif;
@@ -189,6 +195,51 @@ body {
 
 .dflex {
     display: flex;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+  padding: 32px;
+}
+
+.blueBox {
+  height: 32px;
+  background-color: #39DAFF;
+  
+}
+
+.quarder {
+  width: 20vw;
+}
+
+.rounded {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  width: 32px;
+}
+
+.center {
+  align-items: center;
+  position: absolute;
+  left: 0;
+}
+
+@media(max-width: 1450px) {
+  
+  .dflex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #app {
+    height: 350vh;
+  }
+
+  .center {
+    flex-direction: row !important;
+  }
+
 }
 
 </style>

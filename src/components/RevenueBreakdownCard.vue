@@ -84,4 +84,15 @@ p{
   text-align: end;
 }
 
+@media(max-width: 1450px) {
+
+  .chart-card {
+    margin-left: 0;
+    width: 750px;
+    height: 600px;
+    margin-top: 50px;    
+  }
+
+}
+
 </style>

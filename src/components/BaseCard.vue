@@ -29,7 +29,6 @@ export default {
   },
   methods: {
       getLogoPath(companyName) {
-          // Beispiel: Pfade für Logos
           const logos = {
               Apple: require('./../assets/img/Apple.png'),
               Amazon: require('./../assets/img/Amazon.png'),
@@ -68,31 +67,6 @@ export default {
   overflow-x: auto;
 }
 
-/* .scroll-arrow {
-  border-radius: 50%;
-  background-color: #39DAFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 30px;
-  min-width: 30px;
-  max-height: 30px;
-  max-width: 30px;
-  box-sizing: border-box;
-  color: black;
-  font-weight: 500;
-  font-size: 20px;
-  z-index: 2;
-}
-
-.left {
-  margin-left: -60px;
-}
-
-.right {
-  margin-left: 130px;
-} */
-
 .value-card-container::-webkit-scrollbar {
     height: 8px; /* Höhe des horizontalen Scrollbalkens */
 }
@@ -105,4 +79,13 @@ export default {
 .value-card-container::-webkit-scrollbar-thumb:hover {
     background-color: #073d64; /* Scrollbar-Farbe beim Hover */
 }
+
+@media(max-width: 1450px) {
+
+  .base-card {
+    height: 260px;
+  }
+
+}
+
 </style>

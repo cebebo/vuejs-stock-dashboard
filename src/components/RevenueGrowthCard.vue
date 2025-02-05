@@ -26,7 +26,7 @@
           options: {
             responsive: true,
             maintainAspectRatio: true,
-            aspectRatio: 2,
+            aspectRatio: 2.1,
             plugins: {
               legend: {
                 display: true,
@@ -79,13 +79,13 @@
   
   <style scoped>
   .chart-card {
-    width: 800px;
-    height: 500px;
+    width: 625px;
+    height: 400px;
     background-color: #011f35;
     border-radius: 16px;
     padding: 16px;
     box-sizing: border-box;
-    margin-left: 32px;
+    margin-left: 50px;
   }
   
   p {
@@ -94,5 +94,17 @@
     padding-left: 32px;
     color: white;
   }
-  </style>
+
+  @media(max-width: 1450px) {
+
+    .chart-card {
+      margin-left: 0;
+      width: 750px;
+      height: 450px;
+      margin-top: 50px;
+    }
+
+  }
+
+</style>
   
